@@ -9,6 +9,7 @@ namespace TicTacToeGame.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.CurrentPlayer = game.CurrentPlayer;
             return View(game);
         }
 
@@ -22,6 +23,7 @@ namespace TicTacToeGame.Controllers
                 ViewBag.Winner = winner;
                 game = new TicTacToe(); // Restart the game
             }
+            ViewBag.CurrentPlayer = game.CurrentPlayer;
             return View("Index", game);
         }
     }

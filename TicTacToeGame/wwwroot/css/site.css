@@ -16,3 +16,53 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+table.table {
+    width: 300px;
+    height: 300px;
+    table-layout: fixed;
+}
+
+    table.table td {
+        width: 33.33%;
+        height: 33.33%;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+        position: relative;
+    }
+
+button.btn.btn-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    line-height: 100px; /* Zapewnia centrowanie tekstu w pionie */
+    text-decoration: none;
+}
+
+    button.btn.btn-link:hover {
+        background-color: #f0f0f0;
+        cursor: pointer;
+    }
+
+    button.btn.btn-link:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+td:hover::after {
+    content: attr(data-symbol);
+    color: #ddd;
+    font-size: 48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
