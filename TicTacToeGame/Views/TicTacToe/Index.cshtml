@@ -9,7 +9,7 @@
 @if (ViewBag.Winner != null)
 {
     <div class="alert alert-success">
-        Player @ViewBag.Winner has won!
+        @ViewBag.Winner
     </div>
 }
 
@@ -32,6 +32,7 @@
         </tr>
     }
 </table>
+
 <script>
     document.querySelectorAll('td[data-symbol]').forEach(td => {
         td.addEventListener('mouseover', function () {

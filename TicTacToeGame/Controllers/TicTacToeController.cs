@@ -18,12 +18,22 @@ namespace TicTacToeGame.Controllers
         {
             game.MakeMove(index);
             char winner = game.CheckWinner();
+
             if (winner != ' ')
             {
-                ViewBag.Winner = winner;
+                ViewBag.Winner = $"Player {winner} has won!";
                 game = new TicTacToe(); // Restart the game
             }
-            ViewBag.CurrentPlayer = game.CurrentPlayer;
+            else if (game.IsBoardFull())
+            {
+                ViewBag.Winner = "It's a tie!";
+                game = new TicTacToe(); // Restart the game
+            }
+            else
+            {
+                ViewBag.CurrentPlayer = game.CurrentPlayer;
+            }
+
             return View("Index", game);
         }
     }

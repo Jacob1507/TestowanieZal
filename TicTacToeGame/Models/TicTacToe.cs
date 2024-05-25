@@ -51,6 +51,11 @@
             }
             return ' ';
         }
+        public bool IsBoardFull()
+        {
+            return Board.All(cell => cell != ' ');
+        }
+
     }
 }
 
